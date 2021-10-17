@@ -1,4 +1,4 @@
-#include "nRF24L01.h" //NRF24L01 library created by TMRh20 https://github.com/TMRh20/RF24
+#include "nRF24L01.h"
 #include "RF24.h"
 #include "SPI.h"
 
@@ -7,7 +7,7 @@
 #include <Wire.h>
 
 Adafruit_MPU6050 mpu;
-const float XOFFSET = 0; //0.31;//0.45
+const float XOFFSET = 0;
 const float YOFFSET = 0;
 const float ZOFFSET = 0;
 
@@ -28,8 +28,6 @@ void setup(void) {
   }
   Serial.println("MPU6050 Found!");
 
-  //mpu.reset();
-
   mpu.setAccelerometerRange(MPU6050_RANGE_16_G);
   mpu.setGyroRange(MPU6050_RANGE_500_DEG);
   mpu.setFilterBandwidth(MPU6050_BAND_21_HZ);
@@ -45,7 +43,6 @@ void setup(void) {
 }
 
 void loop(void) {
-
   sensors_event_t a, g, temp;
   mpu.getEvent(&a, &g, &temp);
 
@@ -54,7 +51,4 @@ void loop(void) {
   radio.write(message, sizeof(message));
   Serial.println(message);
   delay(20);
-  //delay(500);
-  //}
-
 }
