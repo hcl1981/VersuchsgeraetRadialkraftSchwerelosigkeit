@@ -1,7 +1,16 @@
+/*
+	Author: Jan Schulz 2019-2021
+	License: 
+	Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+	https://creativecommons.org/licenses/by-nc-sa/4.0/
+	
+	For further details check out: 
+		https://513kid.de
+*/
+
 #include "nRF24L01.h"
 #include "RF24.h"
 #include "SPI.h"
-
 #include <Adafruit_MPU6050.h>
 #include <Adafruit_Sensor.h>
 #include <Wire.h>
